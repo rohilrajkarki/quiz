@@ -4,21 +4,28 @@ import 'package:quiz_me/model/option.dart';
 import 'package:quiz_me/model/questions.dart';
 import 'package:quiz_me/utils.dart';
 
-class OptionsWidget extends StatelessWidget {
+class OptionsWidget extends StatefulWidget {
   final Question question;
-  final ValueChanged<Option> onClickedOption;
-
+  final Function onClickedOption;
+  final int index;
   const OptionsWidget({
     Key? key,
     required this.question,
+    required this.index,
     required this.onClickedOption,
   }) : super(key: key);
 
   @override
+  State<OptionsWidget> createState() => _OptionsWidgetState();
+}
+
+class _OptionsWidgetState extends State<OptionsWidget> {
+  bool change = false;
+  @override
   Widget build(BuildContext context) => ListView(
         physics: BouncingScrollPhysics(),
         children: Utils.heightBetween(
-          question.options
+          widget.question.options
               .map((option) => buildOption(context, option))
               .toList(),
           height: 8,
@@ -27,11 +34,26 @@ class OptionsWidget extends StatelessWidget {
 
   Widget buildOption(BuildContext context, Option option) {
     return GestureDetector(
-      // onTap: ()=>onClickedOption(option),
+      onTap: () {
+        if (option.isCorrect) {
+          setState(() {
+            change = true;
+            widget.question.isLocked = true;
+          });
+        } else {
+          setState(() {
+            widget.question.isLocked = true;
+          });
+        }
+      },
       child: Container(
         padding: EdgeInsets.all(12),
         decoration: BoxDecoration(
-          color: kpurple,
+          color: !widget.question.isLocked
+              ? kpurple
+              : option.isCorrect
+                  ? Colors.green
+                  : Colors.red,
           borderRadius: BorderRadius.circular(16),
         ),
         child: Column(

@@ -35,7 +35,7 @@ List<Product> products = [
   //   courses: 22,
   // ),
   Product(
-    questions: questions,
+    questions: questions1,
     id: 3,
     title: "Finance",
     image: "assets/images/programming.png",

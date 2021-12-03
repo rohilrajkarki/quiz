@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:quiz_me/components/question_widget.dart';
 import 'package:quiz_me/model/option.dart';
 import 'package:quiz_me/model/product_model.dart';
+import 'package:quiz_me/model/question_model.dart';
 import 'package:quiz_me/model/questions.dart';
 
 class CatagoryList extends StatelessWidget {
-  final Question question;
+  // final Question question;
   const CatagoryList({
     Key? key,
-    required this.question,
+    // required this.question,
   }) : super(key: key);
 
   @override
@@ -22,18 +23,15 @@ class CatagoryList extends StatelessWidget {
             crossAxisCount: 2, childAspectRatio: 0.85),
         itemBuilder: (context, index) => CategoryCard(
               product: products[index],
-              question: question,
             ));
   }
 }
 
 class CategoryCard extends StatefulWidget {
   final Product product;
-  final Question question;
   const CategoryCard({
     Key? key,
     required this.product,
-    required this.question,
   }) : super(key: key);
 
   @override
@@ -52,7 +50,7 @@ class _CategoryCardState extends State<CategoryCard> {
               MaterialPageRoute(
                   builder: (context) => QuestionsWidget(
                         category: widget.product,
-                        onClickedOption: selectOption,
+                        // onClickedOption: selectOption as Function,
                       )));
         },
         child: Container(
@@ -96,14 +94,5 @@ class _CategoryCardState extends State<CategoryCard> {
     );
   }
 
-  void selectOption(Option option) {
-    if (widget.question.isLocked) {
-      return;
-    } else {
-      setState(() {
-        widget.question.isLocked = true;
-        // widget.question.selectedOption = option;
-      });
-    }
-  }
+  //
 }
