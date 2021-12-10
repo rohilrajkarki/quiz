@@ -21,7 +21,7 @@ List<Product> products = [
   Product(
     questions: questions,
     id: 1,
-    title: "Graphic Design",
+    title: "Moter Bike",
     image: "assets/images/graphics.png",
     color: Color(0xFF71b8ff),
     courses: 16,
@@ -37,7 +37,7 @@ List<Product> products = [
   Product(
     questions: questions1,
     id: 3,
-    title: "Finance",
+    title: "Car",
     image: "assets/images/programming.png",
     color: Color(0xFFffaa5b),
     courses: 15,
@@ -45,7 +45,7 @@ List<Product> products = [
   Product(
     questions: questions,
     id: 4,
-    title: "UI/Ux design",
+    title: "Scooter",
     image: "assets/images/graphics.png",
     color: Color(0xFF9ba0fc),
     courses: 18,

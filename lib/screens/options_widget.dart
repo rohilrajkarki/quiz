@@ -59,6 +59,11 @@ class _OptionsWidgetState extends State<OptionsWidget> {
         child: Column(
           children: [
             buildAnswer(option),
+            !widget.question.isLocked
+                ? SizedBox()
+                : option.isCorrect
+                    ? Text(widget.question.solution)
+                    : Text("")
           ],
         ),
       ),
