@@ -7,14 +7,15 @@ class Product {
   final int id, courses;
   final Color color;
   final List<Question> questions;
-  Product({
-    required this.questions,
-    required this.image,
-    required this.title,
-    required this.courses,
-    required this.color,
-    required this.id,
-  });
+  int score;
+  Product(
+      {required this.questions,
+      required this.image,
+      required this.title,
+      required this.courses,
+      required this.color,
+      required this.id,
+      this.score = 0});
 }
 
 List<Product> products = [

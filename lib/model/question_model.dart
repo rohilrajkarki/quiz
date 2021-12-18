@@ -5,6 +5,8 @@ import '../model/option.dart';
 final questions = [
   Question(
     text: 'Which planet is the hottest in the solar system?',
+    hintone: "HintONe",
+    hinttwo: "hinttwo",
     options: [
       Option(code: 'A', text: 'Earth', isCorrect: false),
       Option(code: 'B', text: 'Venus', isCorrect: true),
@@ -15,6 +17,8 @@ final questions = [
   ),
   Question(
     text: 'How many molecules of oxygen does ozone have?',
+    hintone: "HintONe",
+    hinttwo: "hinttwo",
     options: [
       Option(code: 'A', text: '1', isCorrect: false),
       Option(code: 'B', text: '2', isCorrect: false),
@@ -25,6 +29,8 @@ final questions = [
   ),
   Question(
     text: 'What is the symbol for potassium?',
+    hintone: "HintONe",
+    hinttwo: "hinttwo",
     options: [
       Option(code: 'A', text: 'N', isCorrect: false),
       Option(code: 'B', text: 'S', isCorrect: false),
@@ -42,6 +48,8 @@ final questions = [
       Option(code: 'C', text: "Much Ado About Nothing", isCorrect: false),
       Option(code: 'D', text: "The Birthday Party", isCorrect: false),
     ],
+    hintone: "HintONe",
+    hinttwo: "hinttwo",
     solution: '4.48 Psychosis is the correct answer for this question',
   ),
   Question(
@@ -52,6 +60,8 @@ final questions = [
       Option(code: 'C', text: '2007', isCorrect: true),
       Option(code: 'D', text: '2006', isCorrect: false),
     ],
+    hintone: "HintONe",
+    hinttwo: "hinttwo",
     solution: 'iPhone was first released in 2007',
   ),
   Question(
@@ -66,6 +76,8 @@ final questions = [
         isCorrect: false,
       ),
     ],
+    hintone: "HintONe",
+    hinttwo: "hinttwo",
     solution: 'Calcium is the element responsible for keeping the bones strong',
   ),
   Question(
@@ -76,6 +88,8 @@ final questions = [
       Option(code: 'C', text: 'Italy', isCorrect: false),
       Option(code: 'D', text: 'Uruguay', isCorrect: true),
     ],
+    hintone: "HintONe",
+    hinttwo: "hinttwo",
     solution: 'Uruguay was the first country to win world cup',
   ),
 ];
@@ -90,6 +104,8 @@ final questions1 = [
       Option(code: 'D', text: 'K', isCorrect: true),
     ],
     solution: 'The symbol for potassium is K',
+    hintone: "HintONe",
+    hinttwo: "hinttwo",
   ),
   Question(
     text:
@@ -100,6 +116,8 @@ final questions1 = [
       Option(code: 'C', text: "Much Ado About Nothing", isCorrect: false),
       Option(code: 'D', text: "The Birthday Party", isCorrect: false),
     ],
+    hintone: "HintONe",
+    hinttwo: "hinttwo",
     solution: '4.48 Psychosis is the correct answer for this question',
   ),
   Question(
@@ -110,6 +128,8 @@ final questions1 = [
       Option(code: 'C', text: '2007', isCorrect: true),
       Option(code: 'D', text: '2006', isCorrect: false),
     ],
+    hintone: "HintONe",
+    hinttwo: "hinttwo",
     solution: 'iPhone was first released in 2007',
   ),
   Question(
@@ -124,6 +144,8 @@ final questions1 = [
         isCorrect: false,
       ),
     ],
+    hintone: "HintONe",
+    hinttwo: "hinttwo",
     solution: 'Calcium is the element responsible for keeping the bones strong',
   ),
   Question(
@@ -134,6 +156,8 @@ final questions1 = [
       Option(code: 'C', text: 'Italy', isCorrect: false),
       Option(code: 'D', text: 'Uruguay', isCorrect: true),
     ],
+    hintone: "HintONe",
+    hinttwo: "hinttwo",
     solution: 'Uruguay was the first country to win world cup',
   ),
 ];

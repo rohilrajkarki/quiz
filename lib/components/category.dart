@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'package:quiz_me/components/question_widget.dart';
 import 'package:quiz_me/model/option.dart';
 import 'package:quiz_me/model/product_model.dart';
 import 'package:quiz_me/model/question_model.dart';
 import 'package:quiz_me/model/questions.dart';
+import 'package:quiz_me/provider/category.dart';
 
 class CatagoryList extends StatelessWidget {
   // final Question question;
@@ -18,19 +20,25 @@ class CatagoryList extends StatelessWidget {
     return GridView.builder(
         shrinkWrap: true,
         physics: ScrollPhysics(),
-        itemCount: products.length,
+        itemCount: Provider.of<CategoryProvider>(context, listen: false)
+            .categories
+            .length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2, childAspectRatio: 0.85),
         itemBuilder: (context, index) => CategoryCard(
-              product: products[index],
+              product: Provider.of<CategoryProvider>(context, listen: false)
+                  .categories[index],
+              index: index,
             ));
   }
 }
 
 class CategoryCard extends StatefulWidget {
   final Product product;
+  final int index;
   const CategoryCard({
     Key? key,
+    required this.index,
     required this.product,
   }) : super(key: key);
 
@@ -49,8 +57,8 @@ class _CategoryCardState extends State<CategoryCard> {
               context,
               MaterialPageRoute(
                   builder: (context) => QuestionsWidget(
-                        category: widget.product,
-                        // onClickedOption: selectOption as Function,
+                      category: widget.product, index: widget.index
+                      // onClickedOption: selectOption as Function,
                       )));
         },
         child: Container(

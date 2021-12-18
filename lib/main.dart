@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:quiz_me/provider/category.dart';
 import 'package:quiz_me/screens/welcome_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    ChangeNotifierProvider(
+        create: (context) => CategoryProvider(), child: MyApp()),
+  );
 }
 
 class MyApp extends StatelessWidget {
